@@ -81,18 +81,18 @@ table td img {
     height: 30px;
 }
 
-.results {
-    padding: 8px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #000;
-    border-radius: 3px;
-}
-
 .approved {
     background-color: #009432;
+    padding: 8px;
+    font-weight: bold;
+    border-radius: 3px;
+    color: #fff;
 }
 
-.disaproved {
+.disapproved {
     background-color: red;
+    padding: 8px;
+    font-weight: bold;
+    border-radius: 3px;
+    color: #fff;
 }

@@ -3,6 +3,9 @@ const imgApproved = '<img src="./images/aprovado.png" alt="emoji celebrando"'
 const imgDisapproved = '<img src="./images/reprovado.png" alt="emoji decepcionado"'
 const activity = [];
 const notes = [];
+const spanAproved = '<span class ="approved">Aprovado</span';
+const spanDisapproved = '<span class ="disapproved">Reprovado</span>';
+const lowestNote = prompt("Digite a nota mínima para aprovação");
 
 let lines = '';
 
@@ -37,8 +40,9 @@ function attTable() {
 
 function attFinalAverage() {
     const finalAverage = calculateAverage();
-    console.log(averages);
 
+    document.getElementById('final-average').innerHTML = finalAverage;
+    document.getElementById('final-result').innerHTML = finalAverage >= lowestNote ? spanAproved : spanDisapproved;
 }
 
 function calculateAverage() {
