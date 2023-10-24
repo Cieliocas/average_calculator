@@ -20,6 +20,9 @@ function addLine() {
     const inputActivityName = document.getElementById('activity-name');
     const inputActivityNote = document.getElementById('activity-note');
 
+    if (activity.includes(inputActivityName.value)) {
+        alert(`A atividade: "${inputActivityName.value}" ja foi inserida`);
+    } else {
     activity.push(inputActivityName.value);
     notes.push(parseFloat(inputActivityNote.value));
 
@@ -29,6 +32,8 @@ function addLine() {
     theLine += `<td>${inputActivityNote.value >= 7 ? imgApproved : imgDisapproved}</td>`;
     theLine += `<tr>`;
     lines += theLine;
+    }
+
     inputActivityName.value = '';
     inputActivityNote.value = '';
 }
