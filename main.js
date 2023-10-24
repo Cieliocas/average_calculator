@@ -6,7 +6,6 @@ const notes = [];
 const spanAproved = '<span class ="approved">Aprovado</span';
 const spanDisapproved = '<span class ="disapproved">Reprovado</span>';
 const lowestNote = prompt("Digite a nota mínima para aprovação");
-
 let lines = '';
 
 form.addEventListener('submit', function(e) {
@@ -19,13 +18,11 @@ form.addEventListener('submit', function(e) {
 function addLine() {
     const inputActivityName = document.getElementById('activity-name');
     const inputActivityNote = document.getElementById('activity-note');
-
     if (activity.includes(inputActivityName.value)) {
         alert(`A atividade: "${inputActivityName.value}" ja foi inserida`);
     } else {
     activity.push(inputActivityName.value);
     notes.push(parseFloat(inputActivityNote.value));
-
     let theLine = '<tr>';
     theLine += `<td>${inputActivityName.value}</td>`;
     theLine += `<td>${inputActivityNote.value}</td>`;
@@ -33,7 +30,6 @@ function addLine() {
     theLine += `<tr>`;
     lines += theLine;
     }
-
     inputActivityName.value = '';
     inputActivityNote.value = '';
 }
@@ -45,7 +41,6 @@ function attTable() {
 
 function attFinalAverage() {
     const finalAverage = calculateAverage();
-
     document.getElementById('final-average').innerHTML = finalAverage;
     document.getElementById('final-result').innerHTML = finalAverage >= lowestNote ? spanAproved : spanDisapproved;
 }
@@ -56,5 +51,4 @@ function calculateAverage() {
         notesSum += notes[i];
     }
     return notesSum / notes.length;
-    
 }
